@@ -186,11 +186,10 @@ class EnderecoResposta(Endereco):
     "/usuarios",
     status_code=status.HTTP_201_CREATED,
     response_model=Usuario,
-    responses={
-        409: {"description": "CPF ou e-mail já cadastrado"},
-        422: {"description": "Dados inválidos"},
-        500: {"description": "Erro interno do banco de dados"}
-    }
+
+
+
+
 )
 @tratar_erros_banco
 def cadastrar_usuario(usuario: Usuario):
